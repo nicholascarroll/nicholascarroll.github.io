@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>INK User Guide</title>
+<!-- 2016-04-16 Sat 06:23 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Nicholas Carroll" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">INK User Guide</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">About INK</a></li>
+<li><a href="#sec-2">How To Install INK</a></li>
+<li><a href="#sec-3">INK is Free Software</a></li>
+<li><a href="#sec-4">How to Use INK</a>
+<ul>
+<li><a href="#sec-4-1">Basic Keying</a></li>
+<li><a href="#sec-4-2">Combined Matte Keying</a>
+<ul>
+<li><a href="#sec-4-2-1">Making the Garbage Matte</a></li>
+<li><a href="#sec-4-2-2">Making The Core Matte</a></li>
+<li><a href="#sec-4-2-3">Despill</a></li>
+<li><a href="#sec-4-2-4">Finishing Edges</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-3">Multi-pass Keying</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">How INK Works</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">About INK</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+INK is a proportionate colour difference keyer for processing blue or green screen video. It will remove the background screen colour for you (performing both the matte generation and the despill), so then you can superimpose the video over a different background. It's easy to use, even if you have never used a keyer before.
+</p>
+
+<p>
+INK is a general purpose keyer, producing a good result across a wide variety of materials and lighting conditions.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">How To Install INK</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Put INK.ofx.bundle in your OFX plugin path. On OS X this is usually:
+</p>
+<pre class="example">
+/Library/OFX/Plugins
+</pre>
+<p>
+If that folder doesn't exist, you can create it. Or, if you prefer, use the environment variable:
+</p>
+<pre class="example">
+OFX_PLUGIN_PATH
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">INK is Free Software</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+INK is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.  You can get the source code from <a href="http://casanico.com">casanico.com</a>.
+</p>
+
+<p>
+INK is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of merchantability or fitness for a particular purpose.  See the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a> for more details.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">How to Use INK</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Basic Keying</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li>Set the <b>Key Colour</b> by sampling the blue or green background screen colour. The key colour will disappear and you will find the matte in the alpha channel. Sample from close to the foreground subject, being careful not to go too close or you will lose fine edge details.
+</li>
+<li>Adjust the <b>Key Amount</b> if you need to key more or less. You can key different amounts in shadows, midtones or highlights of the image by using the <b>Tune Key Amount</b> controls. 
+</li>
+<li>Increasing the <b>Key Balance</b> will weight the key toward the least key channel. Decreasing it weights the key toward the middle key channel. 
+</li>
+<li>Use <b>Matte/Despill Balance</b> to perform colour correction inside the keying operation. The colour you select for this parameter will effectively be excluded from the operation. <b>Matte Balance</b> will apply this to only the matte generation and <b>Despill Balance</b> will apply it to only the despill operation. Usually you will find the same value works well for both <b>Matte Balance</b> and <b>Despill Balance</b>.
+</li>
+<li>Composite the result (<b>Output Mode</b> `Premultiplied') over your desired background image using your application's composite `over' operation. 
+</li>
+</ol>
+
+<p>
+If your footage was shot perfectly, these steps will give you a perfect key. But in practice you will often need to do <i>Combined Matte Keying</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Combined Matte Keying</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<div class="figure">
+<p><img src="./garbage-core.png" alt="garbage-core.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> INK nodes used as garbage and core mattes.</p>
+</div>
+
+<p>
+In an imperfect world we find that many shots have unevenly lit background screen, set equipment in the background, or the background screen colour spilling onto the foreground subjects. You remove the unwanted background artefacts by covering them with a <i>garbage matte</i>. The spill is removed by the keying operation but that will leave the matte somewhat transparent (because INK cannot distinguish spill from transparency), so you will need a <i>core matte</i> wherever you have spill. Alternatively you might need the core matte to serve a different purpose: to mask an area where you want neither keying nor despill to occur.
+</p>
+
+<p>
+As a convenience, INK has <b>Garbage</b> and <b>Core</b> inputs. You can make the garbage and core mattes procedurally using INK (or any other keyer), or by drawing an animated rotobezier shape. 
+</p>
+
+<p>
+To make a procedural matte in INK, open the <b>Matte Postprocessing</b> section to reveal the following controls:
+</p>
+<ul class="org-ul">
+<li><b>Invert</b>
+</li>
+<li><b>Black Point</b>
+</li>
+<li><b>White Point</b>
+</li>
+<li><b>Fill Holes</b>
+</li>
+<li><b>Erode</b>
+</li>
+<li><b>Blur</b>
+</li>
+</ul>
+<p>
+These operations don't influence the keying operation; they only affect the alpha channel coming out of the INK node. They are purely a convenience for when you are using INK to make garbage and core mattes. <b>Matte Postprocessing</b> options DEGRADE the matte, so use them ONLY for making garbage/core mattes.
+</p>
+</div>
+
+<div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1">Making the Garbage Matte</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<div class="figure">
+<p><img src="./garbage.png" alt="garbage.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> Garbage matte (source image courtesy of Steve Wright Digital FX).</p>
+</div>
+
+<p>
+To make a garbage matte, open the <b>Matte Postprocess</b> controls and:
+</p>
+<ol class="org-ol">
+<li>Enable <b>Invert</b>.
+</li>
+<li>Raise the <b>White Point</b> until you see no noise in the background, then lower the <b>Black Point</b> until you have a pure black foreground. You can vary the gamma in your viewer, or use the `Matte Monitor' <b>Output Mode</b>, to confirm this.
+</li>
+<li>Use <b>Fill Holes</b> if you need to patch any holes in the matte. 
+</li>
+<li><b>Erode</b> the matte to bring the background just clear of the edges of the foreground. Compare against the original so you can see how far from the edge you are. 
+</li>
+<li><b>Blur</b> the matte to feather out that edge. Don't try to get it perfect yet, because you will make your fine adjustments once you have the whole composite constructed.
+</li>
+<li>Name this INK node `garbage' and attach it to the <b>Garbage</b> input of your main INK node, like in Figure 1.
+</li>
+</ol>
+
+<p>
+If you need to add a roto shape to your garbage matte, invert it and connect it as the <b>Garbage</b> input clip <i>of your garbage matte INK node</i>. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2">Making The Core Matte</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<div class="figure">
+<p><img src="./core.png" alt="core.png" />
+</p>
+<p><span class="figure-number">Figure 3:</span> Core matte.</p>
+</div>
+
+<p>
+Wherever you have spill, you will need a core matte. To make a core matte:
+</p>
+<ol class="org-ol">
+<li>Set the viewer to alpha mode. Now raise the <b>Key Amount</b> to slightly corrode the edge of the matte.
+</li>
+<li>In the <b>Matte Postprocess</b> controls, lower the <b>White Point</b> to make the matte solid (alpha of 1.0). 
+</li>
+<li>Compare to the main INK node's matte, and adjust <b>Key Amount</b> and <b>White Point</b> so that the core matte is just marginally smaller than the main INK node's matte.
+</li>
+<li>You can use <b>Fill Holes</b> if you need to, but this can blur your edges, so keep an eye on edges with fine details such as hair.
+</li>
+<li>Ensure <b>Despill Core</b> is enabled.
+</li>
+</ol>
+
+<p>
+If instead you need a holdout against despill (for example to key a blue eyed actor with a blue screen), cover that area with a core matte and disable the option <b>Despill Core</b>. Then INK will reduce the <b>Key Amount</b> by the core matte density.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3">Despill</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+INK performs despill in the same operation as it pulls the matte.
+</p>
+
+<p>
+If you enable <b>Despill Core</b>, you should replace the spill colour that was removed with a substitute; the <b>Replacement Colour</b>. Sample a region of unaffected foreground that will make a good average of what the original colour would have been. You can then fine tune the result using:
+</p>
+<ul class="org-ul">
+<li><b>Replacement Amount</b>: You can reduce this all the way to zero, which is the same as not having set <b>Replacement Colour</b>.
+</li>
+<li><b>Preserve Luminance</b>: By default, the luminance of the despilled pixel is matched in the replacement. You can reduce this all the way down to a solid colour.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2-4" class="outline-4">
+<h4 id="sec-4-2-4">Finishing Edges</h4>
+<div class="outline-text-4" id="text-4-2-4">
+
+<div class="figure">
+<p><img src="./matte-monitor.png" alt="matte-monitor.png" />
+</p>
+<p><span class="figure-number">Figure 4:</span> Matte Monitor.</p>
+</div>
+
+<p>
+The edges are where the action is. Use the `Matte Monitor' <b>Output Mode</b> to see the full extent of the current matte, the garbage and core mattes, and where they overlap. The idea of a matte monitor is to help you to discriminate edge/transparency from pure background and solid foreground by showing you both the holes in your matte and the background noise at the same time. INK sets any alpha &gt;= 0.00001 or &lt; 0.99999 to 0.5. 
+</p>
+
+<p>
+The Matte Monitor shows the current matte in the green channel, the garbage matte in blue and the core matte in red. This produces a colour coding of the mattes:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">black</td>
+<td class="left">pure background</td>
+</tr>
+
+<tr>
+<td class="left">bright green</td>
+<td class="left">solid foreground</td>
+</tr>
+
+<tr>
+<td class="left">mid green</td>
+<td class="left">edge/transparency</td>
+</tr>
+
+<tr>
+<td class="left">yellow</td>
+<td class="left">core matte over solid foreground</td>
+</tr>
+
+<tr>
+<td class="left">blue</td>
+<td class="left">garbage matte over pure background</td>
+</tr>
+
+<tr>
+<td class="left">aqua</td>
+<td class="left">garbage matte over edge/transparency</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+When your garbage or core matte intrudes into your edges, it tends to degrade those edges. Any matte overlap shows up as blended colours: magenta, cyan, etc. It is on these colours that you need to focus your attention. 
+</p>
+
+<p>
+You can view the combined matte in the alpha channel. Or switch <b>Output Mode</b> to 'Matte Monitor Premult' to see a coloured version of the combined matte. Toggling the <b>Core/Garbage</b> inputs is another good way to see how the mattes relate. 
+</p>
+
+<p>
+Always remember that the RGB values of the Matte Monitor are not the actual matte density.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">Multi-pass Keying</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+<img src="./multipass.png" alt="multipass.png" />
+If an image contains distinct regions of disparately coloured or textured edges, it may be best to pull a separate matte for each region and then combine them. The easy way to do this is to chain INK nodes (<i>multi-pass keying</i>).
+</p>
+
+<p>
+You can output your INK matte directly into the <b>Source</b> of another INK node to build up the matte. Set the <b>Output Mode</b> to `Source with Matte' and connect that output to the <b>Source</b> input of the next INK node. You can add it to the core matte by setting <b>Source Alpha</b> to `Add to Core' (you can do this even if there is no <b>Core</b> input). A value of `Multiply' for this option will multiply the combined matte by the source alpha (note this does not show up in the Matte Monitor). A value of `Discard' means INK will totally ignore any alpha in the source clip. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">How INK Works</h2>
+<div class="outline-text-2" id="text-5">
+<p class="verse">
+<i>&#x2026;but this one is just right!</i><br  />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;~Goldilocks<br  />
+</p>
+
+<p>
+In colour difference keying, we make the image pixel's greatest channel (green in the case of greenscreen) less than its middle channel, to remove the key colour. We then need to adjust the proportions of red, green and blue to make the pixel colour what it would have been were the image originally photographed without the key colour present. We can't really know what that desired colour is because it was never captured in the photo. The best we can do is set the greatest channel to the average of the other two channels. As for what value those other two channels should be, we should again stick to the average. So for each channel we incorporate the proportionate difference between each channel of the image pixel and of the <b>Key Colour</b>. This is the <i>proportionate colour difference</i> method and it is how INK works. It is because it always resorts to the average that INK is a general purpose keyer.
+</p>
+
+<p>
+To illustrate, Equation 1 shows how the least channel's output is calculated. The source pixel's least, middle and greatest channels are named C<sub>0</sub>, C<sub>1</sub> and C<sub>2</sub>, respectively. Likewise K<sub>0</sub>, K<sub>1</sub> and K<sub>2</sub> represent the <b>Key Colour</b>'s least, middle and greatest channels. <b>Key Balance</b> (defaulting to 0.5) is b. The result is R<sub>0</sub>:
+</p>
+\begin{equation}
+R_0 =
+(C_2-bC_1)\frac{\frac{\frac{C_0}{(C_2-bC_1)} - \frac{K_0}{(K_2-bK_1)}}{1+\frac{C_0}{(C_2-bC_1)}-(2-b)\frac{K_0}{(K_2-bK_1)}}}{1-\frac{\frac{C_0}{(C_2-bC_1)} - \frac{K_0}{(K_2-bK_1)}}{1+\frac{C_0}{(C_2-bC_1)}-(2-b)\frac{K_0}{(K_2-bK_1)}}}  
+\end{equation}
+
+<p>
+which reduces to:
+</p>
+\begin{equation}
+R_0 =\frac{(C_2-bC_1)(C_0(K_2-bK_1)-K_0(C_2-bC_1))}{b^2C_1K_1-b^2C_1K_0-bC_1K_2+bC_1K_0+bC_2K_0-bC_2K_1+C_2K_2-C_2K_0}
+\end{equation}
+
+<p>
+INK then takes the lesser of C<sub>0</sub> and R<sub>0</sub> as its output for the least channel. The other channels are calculated in a similar way.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Nicholas Carroll</p>
+<p class="date">Created: 2016-04-16 Sat 06:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
