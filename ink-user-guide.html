@@ -511,14 +511,6 @@ In colour difference keying, we make the image pixel's greatest channel (green i
 To illustrate, the following equation shows how the least channel's output is calculated. The source pixel's least, middle and greatest channels are named C<sub>0</sub>, C<sub>1</sub> and C<sub>2</sub>, respectively. Likewise K<sub>0</sub>, K<sub>1</sub> and K<sub>2</sub> represent the <b>Key Colour</b>'s least, middle and greatest channels. <b>Key Balance</b> (defaulting to 0.5) is b. The result is R<sub>0</sub>:
 </p>
 \begin{equation}
-R_0 =
-(C_2-bC_1)\frac{\frac{\frac{C_0}{(C_2-bC_1)} - \frac{K_0}{(K_2-bK_1)}}{1+\frac{C_0}{(C_2-bC_1)}-(2-b)\frac{K_0}{(K_2-bK_1)}}}{1-\frac{\frac{C_0}{(C_2-bC_1)} - \frac{K_0}{(K_2-bK_1)}}{1+\frac{C_0}{(C_2-bC_1)}-(2-b)\frac{K_0}{(K_2-bK_1)}}}  
-\end{equation}
-
-<p>
-which reduces to:
-</p>
-\begin{equation}
 R_0 =\frac{(C_2-bC_1)(C_0(K_2-bK_1)-K_0(C_2-bC_1))}{b^2C_1K_1-b^2C_1K_0-bC_1K_2+bC_1K_0+bC_2K_0-bC_2K_1+C_2K_2-C_2K_0}
 \end{equation}
 
