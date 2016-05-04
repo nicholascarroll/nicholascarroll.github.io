@@ -11,7 +11,7 @@
 //
 // VERSION HISTORY
 // 1.0  N. Carroll  2-MAY-16  First version
-// 1.1  jwrl           2-MAY-16  Reworked to remove array indexing which didn't work
+// 1.1  jwrl        2-MAY-16  Reworked to remove array indexing which didn't work
 // 1.2  N. Carroll  4-MAY-16  Put the matte in the alpha channel.
 //--------------------------------------------------------------//
 
