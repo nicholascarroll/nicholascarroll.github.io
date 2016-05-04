@@ -9,8 +9,10 @@
 // License, or (at your option) any later version. See
 // http://www.gnu.org/licenses/gpl-3.0.html
 //
-// This version reworked to remove array indexing which didn't
-// work in Lightworks by forum moderator jwrl May 2 2016.
+// VERSION HISTORY
+// 1.0  N. Carroll  2-MAY-16  First version
+// 1.1  jwrl           2-MAY-16  Reworked to remove array indexing which didn't work
+// 1.2  N. Carroll  4-MAY-16  Put the matte in the alpha channel.
 //--------------------------------------------------------------//
 
 int _LwksEffectInfo
@@ -138,9 +140,9 @@ float4 MyFunction (float2 xy : TEXCOORD1) : COLOR
    float a3 = (1 - P.z) - P.z * (a2 - (1 + (bal * P.y + (1 - bal) * P.x) / P.z * a2));
    float a4 = max (chan.g, max (a3, chan.b));
 
-   float matte = 1 - saturate (a4);          // alpha
+   float matte = saturate (a4);          // alpha
 
-   return float4 ((chan + background.rgb * matte), 1.0);
+   return float4 ((chan + background.rgb * (1- matte)), matte);
 }
 
 //--------------------------------------------------------------//
